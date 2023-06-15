@@ -7,16 +7,14 @@
     font-family: 'Lato', sans-serif;
 }
 
-/* bring back when second page is working */
-
-/* html, body {
+html, body {
     height: 100%;
 }
 body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-} */
+}
 
 html, .mainPage, .workoutPage {
     height: 100%;
@@ -25,13 +23,15 @@ html, .mainPage, .workoutPage {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    /* delete below out when HTML works */
-    padding-bottom: 100px;
 }
 
-/* h2 {
-    font-family: 'Shadows Into Light', cursive;
-} */
+h2 {
+    font-size: 30px;
+    letter-spacing: 30px;
+    text-align: center;
+    line-height: 2;
+}
+
 .callToAction, .workoutContainer {
     flex: 1;
     display: flex;
@@ -40,9 +40,13 @@ html, .mainPage, .workoutPage {
     background-color: white;
 }
 
+#label {
+    font-size: 30px;
+}
 form {
     line-height: 2;
 }
+
 
 .interactContainer, .APIdisplayContaier {
     flex: 1;
@@ -55,5 +59,24 @@ form {
 
 input[type="submit"] {
     padding: 10px;
-    font-weight: bold;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    color: black;
 }
+
+.callToAction {
+    opacity: 0; /* Initially hide the element */
+    animation: fadeIn 2s ease-in forwards; /* Apply the fadeIn animation */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+      opacity: 1; /* End with opacity 1 */
+    }
+  }
