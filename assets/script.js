@@ -6,27 +6,9 @@ var upperBodyExercises = [];
 var lowerBodyExercises = [];
 var cardioExercises = [];
 var coreExercises = [];
-
-submitBtn.addEventListener("click", function(event) {
-    // remove prevent default when page is working
-    event.preventDefault();
-    if (upperChoice.checked == true) {
-        console.log("upper")
-    } else if (lowerChoice.checked == true) {
-        console.log("lower")
-    } else if (fullbodyChoice.checked == true) {
-        console.log("full")
-    } else {location.reload()}
-})
-
-// fetch("https://exercisedb.p.rapidapi.com/exercises/bodyPartList")
-//     .then(response => {
-//         return response.json()
-//     })
-//     .then(data => {
-//         console.log(data)
-//     })
-//     .catch(error => console.log(error))
+var includedExercises = [];
+var fullBodyList = [];
+var workoutLength = 8;
 
 async function fetchData() {
     const url = 'https://exercisedb.p.rapidapi.com/exercises';
@@ -51,15 +33,52 @@ async function fetchData() {
             } else if (result[i].bodyPart === 'cardio') {
                 cardioExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
 
-        } else if (result[i].bodyPart === 'waist') {
-            coreExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
-            console.log(coreExercises);
-            console.log(upperBodyExercises);
-            console.log(lowerBodyExercises);
-            console.log(cardioExercises);
-
-    }}} catch (error) {
-        console.error(error);
-    }};
+            } else if (result[i].bodyPart === 'waist') {
+                coreExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
+            } 
+        }} catch (error) {
+                console.error(error);
+            }};
 
     fetchData();
+
+    submitBtn.addEventListener("click", function(event) {
+        // remove prevent default when page is working
+        event.preventDefault();
+        includedExercises = [];
+        if (upperChoice.checked == true) {
+            console.log("upper");
+            for (var u = 0; u < workoutLength; u++) {
+                var li = document.createElement('li');
+                li.innerText = JSON.stringify(upperBodyExercises[u].name);
+                var pickRandomUpper = upperBodyExercises[Math.floor(Math.random() * upperBodyExercises.length)];
+                if (!includedExercises.includes(pickRandomUpper)) {
+                    includedExercises.push(pickRandomUpper)
+                }
+            };
+            console.log(includedExercises)
+        } else if (lowerChoice.checked == true) {
+            console.log("lower")
+            for (var u = 0; u < workoutLength; u++) {
+                var li = document.createElement('li');
+                li.innerText = JSON.stringify(lowerBodyExercises[u].name);
+                var pickRandomLower = lowerBodyExercises[Math.floor(Math.random() * lowerBodyExercises.length)];
+                if (!includedExercises.includes(pickRandomLower)) {
+                    includedExercises.push(pickRandomLower)
+                }
+            };
+        } else if (fullbodyChoice.checked == true) {
+            console.log("full");
+            fullBodyList.push(upperBodyExercises.concat(lowerBodyExercises, cardioExercises, coreExercises));
+            for (var u = 0; u < workoutLength; u++) {
+                var li = document.createElement('li');
+                li.innerText = JSON.stringify(fullBodyList[0][u].name);
+                var pickRandomFull = fullBodyList[Math.floor(Math.random() * fullBodyList.length)];
+                if (!includedExercises.includes(pickRandomFull)) {
+                    includedExercises.push(pickRandomFull)
+                }
+            };
+        } else {location.reload()}
+
+    })
+

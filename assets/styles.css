@@ -7,13 +7,26 @@
     font-family: 'Lato', sans-serif;
 }
 
-html, body {
+/* bring back when second page is working */
+
+/* html, body {
     height: 100%;
 }
 body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+} */
+
+html, .mainPage, .workoutPage {
+    height: 100%;
+}
+.mainPage, .workoutPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* delete below out when HTML works */
+    padding-bottom: 100px;
 }
 
 /* h2 {
