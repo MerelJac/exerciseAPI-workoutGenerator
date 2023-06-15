@@ -44,10 +44,30 @@ h2 {
     font-size: 30px;
 }
 form {
-    line-height: 2;
+    line-height: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.input-row {
+    display: flex; /* Use flexbox */
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .input-row input[value="lower"] {
+    margin-left: 10px; /* Add spacing between the radio buttons */
+  }
 
+  .input-row input[value="full"] {
+    margin-left: 10px; /* Add spacing between the radio buttons */
+  }
+
+.input-row input[name="body"] {
+    margin-right: 5px; /* Add spacing between the radio buttons */
+  }
 .interactContainer, .APIdisplayContaier {
     flex: 1;
     background-color: black;
@@ -65,6 +85,7 @@ input[type="submit"] {
     border: none;
     text-transform: uppercase;
     color: black;
+    letter-spacing: 15px;
 }
 
 .callToAction {
