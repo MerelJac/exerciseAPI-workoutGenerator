@@ -80,5 +80,9 @@ async function fetchData() {
             };
         } else {location.reload()}
 
+        //save to local storage 
+        localStorage.setItem("exerciseArray", JSON.stringify(includedExercises));
+        // open other other HTML file
+        window.location.href = "./workout.html"
     })
 

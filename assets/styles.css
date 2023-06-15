@@ -32,7 +32,7 @@ h2 {
     line-height: 2;
 }
 
-.callToAction, .workoutContainer {
+.callToAction, .APIdisplayContaier {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -68,7 +68,7 @@ form {
 .input-row input[name="body"] {
     margin-right: 5px; /* Add spacing between the radio buttons */
   }
-.interactContainer, .APIdisplayContaier {
+.interactContainer, .workoutContainer  {
     flex: 1;
     background-color: black;
     color: white;
@@ -89,7 +89,13 @@ input[type="submit"] {
     padding-left: 21px;
 }
 
-.callToAction {
+.printSection {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.callToAction, .interactContainer {
     opacity: 0; /* Initially hide the element */
     animation: fadeIn 2s ease-in forwards; /* Apply the fadeIn animation */
   }
