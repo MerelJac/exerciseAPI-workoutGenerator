@@ -38,6 +38,16 @@ h2 {
     justify-content: center;
     align-items: center;
     background-color: white;
+    flex-direction: column;
+}
+
+.callToAction {
+    line-height: 0;
+    padding-top: 3pc;
+}
+
+.callToAction p {
+    letter-spacing: 10px;
 }
 
 #label {
@@ -49,6 +59,10 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.workoutContainer h2 {
+    padding-left: 2pc;
 }
 
 .input-row {
@@ -75,6 +89,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 input[type="submit"] {
@@ -92,7 +107,7 @@ input[type="submit"] {
 .printSection {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .callToAction, .interactContainer {
@@ -108,3 +123,26 @@ input[type="submit"] {
       opacity: 1; /* End with opacity 1 */
     }
   }
+
+.gif {
+    max-width: 200px;
+}
+
+.print-here p {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    background: white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.print-here h2 {
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
