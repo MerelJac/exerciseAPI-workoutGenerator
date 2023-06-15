@@ -3,6 +3,9 @@ var upperChoice = document.querySelector('input[value="upper"]');
 var lowerChoice = document.querySelector('input[value="lower"]');
 var fullbodyChoice = document.querySelector('input[value="full"]');
 var upperBodyExercises = [];
+var lowerBodyExercises = [];
+var cardioExercises = [];
+var coreExercises = [];
 
 submitBtn.addEventListener("click", function(event) {
     // remove prevent default when page is working
@@ -38,13 +41,24 @@ async function fetchData() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        // console.log(result[0].gifUrl);
         for (var i = 0; i < result.length; i++) {
-            if (result[i].bodyPart === 'back' || result[i].bodyPart === 'chest') {
-                upperBodyExercises.push({name: result[i].name, link: result[i].gifUrl})
-            }
-        } console.log(upperBodyExercises)
-    } catch (error) {
+            if (result[i].bodyPart === 'back' || result[i].bodyPart === 'chest' || result[i].bodyPart === 'upper arms' || result[i].bodyPart === 'shoulders' || result[i].bodyPart === 'lower arms') {
+                upperBodyExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
+
+            } else if (result[i].bodyPart === 'upper legs' || result[i].bodyPart === 'lower legs') {
+                lowerBodyExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
+
+            } else if (result[i].bodyPart === 'cardio') {
+                cardioExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
+
+        } else if (result[i].bodyPart === 'waist') {
+            coreExercises.push({name: result[i].name, equip: result[i].equipment,  target: result[i].target, link: result[i].gifUrl})
+            console.log(coreExercises);
+            console.log(upperBodyExercises);
+            console.log(lowerBodyExercises);
+            console.log(cardioExercises);
+
+    }}} catch (error) {
         console.error(error);
     }};
 
