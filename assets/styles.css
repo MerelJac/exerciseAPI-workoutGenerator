@@ -125,9 +125,20 @@ input[type="submit"] {
   }
 
 .gif {
-    max-width: 200px;
+    max-width: 300px;
 }
 
+.forStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 10px;
+}
+
+.forStyle h2 {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
 .print-here p {
     border: 2px solid white;
     border-radius: 10px;
@@ -162,6 +173,10 @@ a {
     }
     .workoutContainer {
         padding-bottom: 10px;
+    }
+
+    .forStyle {
+        margin-right: 20px;
     }
 
 }
