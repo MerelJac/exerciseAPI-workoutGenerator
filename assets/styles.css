@@ -146,3 +146,22 @@ a {
     text-decoration: none;
     color: white;
 }
+
+@media screen and (max-width: 400px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .callToAction {
+        padding: 0px;
+    }
+    .workoutContainer h2 {
+        font-size: 30px;
+        line-height: 1.5;
+        margin: 10px;
+    }
+    .workoutContainer {
+        padding-bottom: 10px;
+    }
+
+}

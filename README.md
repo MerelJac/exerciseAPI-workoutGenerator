@@ -1,6 +1,7 @@
 # exerciseAPI-workoutGenerator
 Create workouts and view relevant information to enable a successful athlete. 
 
+
 ## Description
 This application allows the user to create a workout based off upperbody, lower body, or full body criteria. The workouts are 8 exercises long and include additional information of targeted muscle group, equipment needed, and gif demonstration pulled from the API. 
 
@@ -11,4 +12,4 @@ This application pulls data from an ExerviceDB found on RapidAPI by Justin Mozle
 https://mereljac.github.io/exerciseAPI-workoutGenerator/
 
 ## Notes
-This application is currently equipt for desktop or computer use. This application is not yet mobile friendly. 
+This application is currently equipt for desktop or computer use. CSS is applied for max-width of 400px but mouseover eventListeners are not yet enabled on mobile.  
