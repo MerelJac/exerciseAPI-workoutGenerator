@@ -65,6 +65,9 @@ form {
     padding-left: 2pc;
 }
 
+input[type="radio"] {
+    accent-color: black;
+}
 .input-row {
     display: flex; /* Use flexbox */
     flex-direction: row; /* Arrange items in a row */
