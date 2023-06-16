@@ -47,10 +47,8 @@ async function fetchData() {
         event.preventDefault();
         includedExercises = [];
         if (upperChoice.checked == true) {
-            console.log("upper");
             for (var u = 0; u < workoutLength; u++) {
-                var li = document.createElement('li');
-                li.innerText = JSON.stringify(upperBodyExercises[u].name);
+                JSON.stringify(upperBodyExercises[u].name);
                 var pickRandomUpper = upperBodyExercises[Math.floor(Math.random() * upperBodyExercises.length)];
                 if (!includedExercises.includes(pickRandomUpper)) {
                     includedExercises.push(pickRandomUpper)
@@ -58,28 +56,28 @@ async function fetchData() {
             };
             console.log(includedExercises)
         } else if (lowerChoice.checked == true) {
-            console.log("lower")
             for (var u = 0; u < workoutLength; u++) {
-                var li = document.createElement('li');
-                li.innerText = JSON.stringify(lowerBodyExercises[u].name);
+                JSON.stringify(lowerBodyExercises[u].name);
                 var pickRandomLower = lowerBodyExercises[Math.floor(Math.random() * lowerBodyExercises.length)];
                 if (!includedExercises.includes(pickRandomLower)) {
                     includedExercises.push(pickRandomLower)
                 }
             };
         } else if (fullbodyChoice.checked == true) {
-            console.log("full");
-            fullBodyList.push(upperBodyExercises.concat(lowerBodyExercises, cardioExercises, coreExercises));
+            var fullBodyList = upperBodyExercises.concat(lowerBodyExercises, cardioExercises, coreExercises);
+            console.log(fullBodyList);
+            fullBodyList.forEach(data => {
+                console.log(data.name)
+            })
             for (var u = 0; u < workoutLength; u++) {
-                var li = document.createElement('li');
-                li.innerText = JSON.stringify(fullBodyList[0][u].name);
+                JSON.stringify(fullBodyList[u].name);
                 var pickRandomFull = fullBodyList[Math.floor(Math.random() * fullBodyList.length)];
                 if (!includedExercises.includes(pickRandomFull)) {
                     includedExercises.push(pickRandomFull)
                 }
             };
         } else {location.reload()}
-
+        
         //save to local storage 
         localStorage.setItem("exerciseArray", JSON.stringify(includedExercises));
         // open other other HTML file
