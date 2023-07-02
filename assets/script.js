@@ -15,13 +15,16 @@ async function fetchData() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '708af97118msh3f74fb80ad20ee2p1f232ejsncd6d167e1b72',
+            'X-RapidAPI-Key': 'd57e87ede7msh9a81c97580ed5c7p16ceccjsnb1fa77ee9075',
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+        //     'X-RapidAPI-Key': '708af97118msh3f74fb80ad20ee2p1f232ejsncd6d167e1b72',
+        //     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
     
     try {
         const response = await fetch(url, options);
+        console.log(response);
         const result = await response.json();
         for (var i = 0; i < result.length; i++) {
             if (result[i].bodyPart === 'back' || result[i].bodyPart === 'chest' || result[i].bodyPart === 'upper arms' || result[i].bodyPart === 'shoulders' || result[i].bodyPart === 'lower arms') {

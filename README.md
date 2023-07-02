@@ -12,4 +12,4 @@ This application pulls data from an ExerviceDB found on RapidAPI by Justin Mozle
 https://mereljac.github.io/exerciseAPI-workoutGenerator/
 
 ## Notes
-This application is currently equipt for desktop or computer use. CSS is applied for max-width of 400px but mouseover eventListeners are not yet enabled on mobile.  
+This application is currently equipt for desktop or computer use. CSS is applied for max-width of 400px.
